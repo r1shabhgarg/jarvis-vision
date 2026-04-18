@@ -1,0 +1,23 @@
+# Environment variables (Secrets)
+.env
+
+# Python caching
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local data and uploads
+.uploads/
+context_memory.json
+last_raw_response.txt
+last_image.jpg
+
+# Venv
+venv/
+.venv/
+env/
+
+# IDE files
+.vscode/
+.idea/

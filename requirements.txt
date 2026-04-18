@@ -1,0 +1,8 @@
+pillow>=10.2.0
+openai>=1.14.0
+anthropic>=0.96.0
+mistralai>=1.0.0
+python-dotenv>=1.0.1
+fastapi>=0.109.2
+uvicorn>=0.27.1
+python-multipart>=0.0.9

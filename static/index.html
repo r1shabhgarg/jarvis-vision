@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis | Screen Insight</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="background-mesh"></div>
+    
+    <div class="container">
+        <header>
+            <h1>Jarvis Vision</h1>
+            <p>Upload a screenshot or image for immediate contextual insights.</p>
+        </header>
+
+        <main>
+            <div class="upload-panel glass">
+                <div id="drop-zone" class="drop-zone">
+                    <p class="drop-text">Drag & Drop an image here<br>or <span>browse</span></p>
+                    <input type="file" id="file-input" accept="image/*" class="hidden">
+                </div>
+                
+                <div id="preview-container" class="hidden">
+                    <img id="image-preview" src="" alt="Preview">
+                    <button id="clear-btn" class="secondary-btn">Remove</button>
+                </div>
+
+                <div class="command-group">
+                    <input type="text" id="command-input" placeholder="e.g. Analyze this screen" value="Analyze this screen">
+                    <button id="analyze-btn" class="primary-btn">Analyze</button>
+                    <button id="clear-history-btn" class="secondary-btn" title="Clear conversation history">Clear History</button>
+                </div>
+            </div>
+
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Analyzing with Llama Vision...</p>
+            </div>
+
+            <div id="result-panel" class="result-panel hidden glass">
+                <div class="result-header">
+                    <h2>Analysis Results</h2>
+                    <span id="screen-type-badge" class="badge">Type</span>
+                </div>
+                
+                <div class="result-section">
+                    <h3>Summary</h3>
+                    <ul id="res-summary"></ul>
+                </div>
+                
+                <div class="result-section">
+                    <h3>Key Information</h3>
+                    <ul id="res-key-info"></ul>
+                </div>
+                
+                <div class="result-section">
+                    <h3>Action Items</h3>
+                    <ul id="res-action-items"></ul>
+                </div>
+                
+                <div class="result-section">
+                    <h3>Suggestions</h3>
+                    <ul id="res-suggestions"></ul>
+                </div>
+                
+                <div class="result-section">
+                    <h3>Executable Actions</h3>
+                    <div id="res-actions" class="actions-grid"></div>
+                </div>
+                
+                <div class="result-section quick-actions-wrapper">
+                    <h3>Quick Follow-ups</h3>
+                    <div id="res-quick-actions" class="quick-actions-container"></div>
+                </div>
+            </div>
+            
+            <div id="chat-panel" class="chat-panel hidden glass">
+                <div class="chat-header">
+                    <h3>Chat with Jarvis</h3>
+                </div>
+                <div id="chat-log" class="chat-log">
+                    <!-- Conversations will appear here -->
+                </div>
+                <div class="chat-input-group">
+                    <input type="text" id="chat-input" placeholder="Ask a follow-up question...">
+                    <button id="chat-btn" class="primary-btn">Send</button>
+                </div>
+            </div>
+            
+            <div id="error-panel" class="error-panel hidden glass">
+                <p id="error-msg"></p>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
